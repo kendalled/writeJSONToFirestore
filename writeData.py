@@ -32,7 +32,7 @@ doc_ref = db.collection(u'Rugs')
 #     time.sleep(.1)
 
 def commit_data(data):
-  n = 400
+  n = 240
   # List comprehension to break up into chunks
   chunked_array = [data[i * n:(i + 1) * n] for i in range((len(data) + n - 1) // n )]
 
@@ -46,7 +46,7 @@ def commit_data(data):
     print('COMMITING DATA')
     print('------------------------')  
     batch.commit()
-    time.sleep(1)
+    time.sleep(1.5)
 
 for file_name in glob('./Data/*.json'):
   with open(file_name, 'r') as f:
