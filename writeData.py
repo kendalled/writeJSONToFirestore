@@ -10,7 +10,6 @@ from glob import glob
 import shutil
 import time
 
-
 # Credentials and Firestore Reference
 cred = credentials.Certificate('Key/ServiceAccountKey.json')
 app = firebase_admin.initialize_app(cred)
