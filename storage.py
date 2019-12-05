@@ -1,5 +1,6 @@
+# Initializes the rug image database from firestore.
+
 import firebase_admin
-import google-cloud-storage
 from firebase_admin import credentials
 from firebase_admin import storage
 
@@ -24,4 +25,11 @@ def upload_blob(source_file_name, destination_blob_name):
 # See https://googlecloudplatform.github.io/google-cloud-python/latest/storage/buckets.html
 # for more details.
 
-upload_blob('Uploaded/godlist.json', 'test')
+# upload_blob('README.md', 'test2/')
+
+def print_blobs(BLOB_PATH):
+  bucket = storage.bucket()
+  blob = bucket.blob(BLOB_PATH)
+  print(blob.public_url)
+
+print_blobs('gs://pooltablerugs.appspot.com/Fold/a177-fold.jpg')
